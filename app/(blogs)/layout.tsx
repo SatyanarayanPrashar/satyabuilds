@@ -1,13 +1,15 @@
 import { Navbar } from "@/components/navbar";
 
-const AboutpageLayout = ({
+const BlogspageLayout = ({
   children
 }: {
   children: React.ReactNode;
 }) => {
   return ( 
     <div className="h-full dark:bg-[#1F1F1F]">
-      <Navbar />
+      <div className="lg:block sm:hidden">
+        <Navbar />
+      </div>
       <main className="h-full pt-[9rem]">
         {children}
       </main>
@@ -15,4 +17,4 @@ const AboutpageLayout = ({
    );
 }
  
-export default AboutpageLayout;
+export default BlogspageLayout;
