@@ -1,5 +1,4 @@
 import { Navbar } from "@/components/navbar";
-import { NavbarMobile } from "@/components/navbarMobile";
 import { Sides } from "@/components/sides";
 
 const MarketingLayout = ({
