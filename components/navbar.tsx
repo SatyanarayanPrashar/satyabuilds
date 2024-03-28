@@ -28,6 +28,11 @@ export const Navbar = () => {
                         About
                     </Link>
                 </div>
+                <div className={path == "/blogs" ? "bg-slate-100 border-[#dddddd] px-2 py-1 rounded-md" : ""}>
+                    <Link href={"/blogs"}>
+                        Blogs
+                    </Link>
+                </div>
             </div>    
         </div>
     )

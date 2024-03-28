@@ -8,11 +8,11 @@ const AboutPage = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   
   return (
-    <div className="min-h-full flex flex-col px-[20px] text-justify">
+    <div className="min-h-full flex flex-col px-[20px] text-justify bg-[white]">
       <div className={isMobile ? "block" : "flex flex-col gap-y-8 flex-1 pb-10 lg:px-[45vh] md:px-[20px] sm:px-[10px]"}>
       <Slide delay={0.5} direction="up" triggerOnce={true}>
         <h1 className="text-[40px] font-bold">About me</h1>
-        <div className="text-[#4D4D4D] text-[17px]">
+        <div className="text-[#4D4D4D] text-[17px] leading-[25px]">
           <p>I'm a 21 y/o frontend engineer based in Banglore, India. I'm currently pursuing Engineering at BMSIT&M. My fascination with technology knows no bounds, and I'm constantly intrigued by its evolution and its potential to shape the future.</p>
           <p className="mt-[30px]">Beside tech and academics, my interests are not bounded. But only few can be entertained at a time. So, here they are:</p>
           <ul className="mt-[30px] list-disc ml-[15px]">
