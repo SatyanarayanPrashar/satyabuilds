@@ -8,7 +8,7 @@ export const Feature = () => {
     const isMobile = useMediaQuery("(max-width: 768px)");
 
     return (
-        <div className="text-start w-full px-5">
+        <div className="text-start w-full px-5 bg-white">
             <h1 className="mt-[2rem] text-[1.5rem] leading-9 font-bold mb-7">Featured Projects</h1>
             <div className={isMobile? "block gap-x-5" : "flex gap-5" }>
                 <Projectbox title={"Edloops"} description={"An innovative EdTech platform for curating learning materials and building courses..."} link={"https://edloops.com/"} />
