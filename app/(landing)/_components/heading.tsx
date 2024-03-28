@@ -9,7 +9,7 @@ export const Heading = () => {
                     onInit={(typewriter) => {
                         typewriter
                             .pauseFor(500)
-                            .typeString("Satyanarayan Prahar")
+                            .typeString("Satyanarayan Prashar")
                             .start();
                     }}
                 />
