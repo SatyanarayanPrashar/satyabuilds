@@ -22,7 +22,7 @@ const MarketingPage = () => {
   if(loading){
     return (
       <div className="min-h-full flex flex-col">
-        <div className={isMobile ? "block" : "flex flex-col items-center justify-center text-center gap-y-3 flex-1 pb-10 px-[45vh]"}>
+        <div className={isMobile ? "block" : "flex flex-col items-center justify-center text-center gap-y-3 flex-1 pb-10 lg:px-[45vh] md:px-[20px] sm:px-[10px]"}>
           <LoadingBox/>
         </div>
       </div>
@@ -31,7 +31,7 @@ const MarketingPage = () => {
 
   return (
     <div className="min-h-full flex flex-col">
-      <div className={isMobile ? "block" : "flex flex-col items-center justify-center text-center gap-y-8 flex-1 pb-10 px-[45vh]"}>
+      <div className={isMobile ? "block" : "flex flex-col items-center justify-center text-center gap-y-8 flex-1 pb-10 lg:px-[45vh] md:px-[20px] sm:px-[10px]"}>
         <Slide delay={0.5} direction="up" triggerOnce={true}>
           <Heading />
           <Feature />

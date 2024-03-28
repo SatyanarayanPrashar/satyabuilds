@@ -1,35 +1,15 @@
 "use client"
 
-import { useEffect, useState } from "react";
-import { LoadingBox } from "@/components/loading";
 import { Footer } from "@/app/(landing)/_components/footer";
 import { useMediaQuery } from "usehooks-ts";
 import { Slide } from "react-awesome-reveal";
 
 const AboutPage = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
-  const [loading, setLoading] = useState(true);
-
-  useEffect(()=>{
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 500);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if(loading){
-    return (
-      <div className="min-h-full flex flex-col">
-        <div className={isMobile ? "block" : "flex flex-col items-center justify-center text-center gap-y-3 flex-1 pb-10 px-[45vh]"}>
-          <LoadingBox/>
-        </div>
-      </div>
-    )
-  }
   
   return (
     <div className="min-h-full flex flex-col px-[20px] text-justify">
-      <div className={isMobile ? "block" : "flex flex-col gap-y-8 flex-1 pb-10 px-[45vh]"}>
+      <div className={isMobile ? "block" : "flex flex-col gap-y-8 flex-1 pb-10 lg:px-[45vh] md:px-[20px] sm:px-[10px]"}>
       <Slide delay={0.5} direction="up" triggerOnce={true}>
         <h1 className="text-[40px] font-bold">About me</h1>
         <div className="text-[#4D4D4D] text-[17px]">
