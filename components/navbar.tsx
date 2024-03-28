@@ -11,7 +11,7 @@ export const Navbar = () => {
     return (
         <div className={isMobile
             ? "z-50 bg-white fixed top-0 flex items-center justify-between w-full p-6 px-[10px] border-b-[1px]"
-            : "z-50 bg-white fixed top-0 flex items-center justify-between w-full p-6 lg:px-[45vh] md:px-[20px] sm:px-[10px] border-b-[1px]"
+            : "z-50 bg-white fixed top-0 flex items-center justify-between w-full p-6 lg:px-[48vh] md:px-[20px] sm:px-[10px] border-b-[1px]"
         }>
             <div className="font-[600] text-[20px]">Satya</div>
             <div className={isMobile
