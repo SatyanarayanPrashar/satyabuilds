@@ -7,6 +7,7 @@ import { Footer } from "@/app/(landing)/_components/footer";
 import { Slide } from "react-awesome-reveal";
 import { useMediaQuery } from "usehooks-ts";
 import { LoadingBox } from "@/components/loading";
+import { usePathname } from "next/navigation";
 
 type BlogInfo = {
     title: string;
@@ -17,14 +18,17 @@ const BlogPage = () => {
     const isMobile = useMediaQuery("(max-width: 768px)");
     const [currentBlog, setCurrentBlog] = useState<BlogInfo | null>(null);
     const [isLoading, setIsLoading] = useState(true);
+    const path = usePathname();
     
     useEffect(() => {
-        console.log("trigger current blog hook");
-
         const fetchCurrentBlog = async () => {
             setIsLoading(true);
             try {
-                const docRef = doc(db, "blogs", "My-Experience-as-PM");
+                console.log(path);
+                const blogId = path.replace("/blogs/", "");
+
+                const docRef = doc(db, "blogs", blogId);
+                console.log(blogId);
                 const docSnap = await getDoc(docRef);
                 if (docSnap.exists()) {
                     const blogData = docSnap.data();
@@ -51,7 +55,7 @@ const BlogPage = () => {
               <LoadingBox/>
           </div>
         )
-      }
+    }
 
     return (
         <div className="min-h-full flex flex-col bg-[white]">
