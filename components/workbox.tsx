@@ -15,7 +15,7 @@ export const Workbox = () => {
                         <p className="">Product Management Intern</p>
                         <p>Jan 23-Nov 23 </p>
                     </div>
-                    <p className="text-[#4D4D4D] leading-[1.7rem] mt-[5px]">Worked as Product Manager Intern, to build and ship the product. Managed the Frontend, Backend, and Design Team. Worked on Product Roadmap and took cruicial descisions on what features to be shiped...</p>
+                    <p className="text-[#4D4D4D] leading-[1.7rem] mt-[5px]">Worked as Product Manager Intern, to build and ship the product. Managed the Frontend, Backend, and Design Team. Worked on Product Roadmap and took crucial descisions on what features to be shipped...</p>
                     <div className={isMobile ? "flex flex-col text-[#4D4D4D] font-[500] mt-[20px]" :"flex justify-between text-[#4D4D4D] font-[500] mt-[20px]"}>
                         <p>Flutter Developer</p>
                         <p>Oct 22-Dec 22 </p>

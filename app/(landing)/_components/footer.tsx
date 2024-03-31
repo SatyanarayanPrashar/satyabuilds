@@ -4,7 +4,7 @@ import { Github, Linkedin, Twitter } from "lucide-react";
 
 export const Footer = () => {
     return (
-        <div className="w-[95%] flex justify-between items-center mt-[60px]">
+        <div className="w-[100%] flex justify-between items-center mt-[60px]">
             <div className="flex gap-3">
                 <a href="https://github.com/SatyanarayanPrashar" target="_blank" rel="noopener noreferrer" className="hover:text-[blue]">
                     <Github size="20px"/>
