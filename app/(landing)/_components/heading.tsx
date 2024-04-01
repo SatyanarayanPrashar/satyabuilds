@@ -30,9 +30,9 @@ export const Heading = () => {
                 <a href="https://twitter.com/Satya021Don" target="_blank" rel="noopener noreferrer" className="items-center flex gap-1 border-[#dddddd] border-[1px] rounded-lg px-3 py-1 hover:bg-slate-100">
                     <Twitter size="20px"/> X(twitter)
                 </a>
-                <a href="satyanarayan.pdf" target="_blank" rel="noopener noreferrer" className="items-center flex gap-1 border-[#dddddd] border-[1px] rounded-lg px-3 py-1 hover:bg-slate-100">
+                {/* <a href="satyanarayan.pdf" target="_blank" rel="noopener noreferrer" className="items-center flex gap-1 border-[#dddddd] border-[1px] rounded-lg px-3 py-1 hover:bg-slate-100">
                     <File size="20px"/> Resume
-                </a>
+                </a> */}
             </div>
         </div>
     )
