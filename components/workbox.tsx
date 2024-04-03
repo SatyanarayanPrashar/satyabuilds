@@ -20,7 +20,7 @@ export const Workbox = () => {
                         <p>Flutter Developer</p>
                         <p>Oct 22-Dec 22 </p>
                     </div>
-                    <p className="text-[#4D4D4D] leading-[1.7rem] mt-[5px]">Worked on core product to ship new features and improve exisiting one. Consistently debugged and fixed the exisitng code base...</p>
+                    <p className="text-[#4D4D4D] leading-[1.7rem] mt-[5px]">Worked on core product to ship new features and improve existing one. Consistently debugged and fixed the existing code base...</p>
                 </div>
             </div>
         </div>
