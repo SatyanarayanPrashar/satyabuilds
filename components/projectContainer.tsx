@@ -6,7 +6,7 @@ export const Projectbox = ( {title, description, link } : {title: string, descri
     const isMobile = useMediaQuery("(max-width: 768px)");
 
     return (
-        <div className={isMobile ? "flex w-full bg-slate-100 border-[#dddddd] border-[1px] rounded-lg flex-col justify-end p-4 my-[18px] hover:bg-slate-200" : "flex gap-y-3 w-full bg-slate-100 border-[#dddddd] border-[1px] rounded-lg flex-col justify-end py-7 px-[18px] hover:bg-slate-200"}>
+        <div className={isMobile ? "flex w-full bg-slate-100 border-[#dddddd] border-[1px] rounded-lg flex-col p-4 my-[18px] hover:bg-slate-200" : "flex gap-y-3 w-full bg-slate-100 border-[#dddddd] border-[1px] rounded-lg flex-col py-7 px-[18px] hover:bg-slate-200"}>
             <a href={link} target="_blank">
                 <div className="flex justify-between">
                     <div className="flex gap-2">
