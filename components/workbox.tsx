@@ -11,7 +11,7 @@ export const Workbox = () => {
                 <img src="https://www.treeved.com/footerLogo.png" className="h-[2.7rem] w-[2.7rem] rounded-md bg-white"/>
                 <div className="flex flex-col justify-center text-justify">
                     <p className="font-[600]">TreeVed</p>
-                    <div className={isMobile ? "flex flex-col text-[#4D4D4D] font-[500] mt-[20px]" :"flex justify-between text-[#4D4D4D] font-[500] mt-[20px]"}>
+                    <div className={isMobile ? "flex flex-col text-[#4D4D4D] font-[500] mt-[20px]" :"flex justify-between text-[#4D4D4D] font-[500] mt-[0px]"}>
                         <p className="">Product Management Intern</p>
                         <p>Jan 23-Nov 23 </p>
                     </div>
