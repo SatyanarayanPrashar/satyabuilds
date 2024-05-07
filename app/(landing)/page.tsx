@@ -4,7 +4,7 @@ import { Feature } from "./_components/feature";
 import { Footer } from "./_components/footer";
 import { Heading } from "./_components/heading";
 import { useMediaQuery } from "usehooks-ts";
-import { Slide } from "react-awesome-reveal";
+import { motion } from "framer-motion";
 
 const MarketingPage = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -12,10 +12,15 @@ const MarketingPage = () => {
   return (
     <div className="min-h-full flex flex-col bg-[white]">
       <div className={isMobile ? "block " : "flex flex-col items-center justify-center text-center gap-y-8 flex-1 pb-10 lg:px-[45vh] md:px-[20px] sm:px-[10px]"}>
-        <Slide delay={0.5} direction="up" triggerOnce={true}>
+        <motion.div
+        initial={{ opacity: 0, paddingTop: "20px" }}
+        whileInView={{ opacity: 1, paddingTop: "0px" }}
+        transition={{ ease: "linear", duration: 1 }}
+        viewport={{ margin: "-200px" }}
+        >
           <Heading />
-          <Feature />
-        </Slide>
+        </motion.div>
+        <Feature />
         <Footer />
       </div>
     </div>
