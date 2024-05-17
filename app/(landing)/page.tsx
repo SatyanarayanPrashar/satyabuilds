@@ -24,20 +24,6 @@ const MarketingPage = () => {
   return (
     <div className="min-h-full flex flex-col bg-[white]">
       <div className={isMobile ? "block " : "flex flex-col items-center justify-center text-center gap-y-8 flex-1 pb-10 lg:px-[45vh] md:px-[20px] sm:px-[10px]"}>
-
-      <div className="text-5xl leading-snug font-extrabold flex gap-2 justify-start items-start w-[45rem] bg-red-200">
-        We help you{" "}
-        <motion.span
-          key={index}
-          initial={{ opacity: 0, y: "100%" }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: "-100%" }}
-          transition={{ ease: "easeOut", duration: 1 }}
-        >
-          {data[index]}
-        </motion.span>
-      </div>
-
         <motion.div
         initial={{ opacity: 0, paddingTop: "20px" }}
         whileInView={{ opacity: 1, paddingTop: "0px" }}
