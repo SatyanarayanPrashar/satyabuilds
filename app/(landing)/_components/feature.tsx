@@ -18,8 +18,8 @@ export const Feature = () => {
             <motion.div
             initial={{ opacity: 0, paddingTop: "20px" }}
             whileInView={{ opacity: 1, paddingTop: "0px" }}
-            transition={{ ease: "linear", duration: 0.5 }}
-            viewport={{ margin: "-200px" }}
+            transition={{ ease: "linear", duration: 0.3 }}
+            viewport={{ margin: "-100px" }}
             >
                 <>
                     <h1 className="mt-[0.5rem] text-[1.5rem] leading-9 font-bold mb-7">Featured Projects</h1>
@@ -67,15 +67,13 @@ export const Feature = () => {
             <motion.div
             initial={{ opacity: 0, paddingTop: "20px" }}
             whileInView={{ opacity: 1, paddingTop: "0px" }}
-            transition={{ ease: "linear", duration: 0.5 }}
-            viewport={{ margin: "-200px" }}
+            transition={{ ease: "linear", duration: 0.3 }}
+            viewport={{ margin: "-100px" }}
             >
                 <>
                     <h1 className="mt-[3rem] text-[1.5rem] leading-9 font-bold mb-7">Work</h1>
                     <div className={isMobile? "block gap-x-5" : "flex flex-col gap-5" }>
-                        <Workbox_single title={"Monter"} dates={"May 24-present"} role={"Frontend & UI/UX Intern"} description={"Building with NextJS, Tailwind CSS, responsive Website and using Figma to design UI/UX..."} logoURL={""} />
                         <Workbox />
-                        <Workbox_single title={"Fise Technologies"} dates={"June 22-Oct 23"} role={"Flutter Developer Intern"} description={"Built Cross Platform mobile application using Flutter Framework, used RiverPod for state management..."} logoURL={""} />
                     </div>
                 </>
             </motion.div>
@@ -83,8 +81,8 @@ export const Feature = () => {
             <motion.div
             initial={{ opacity: 0, paddingTop: "20px" }}
             whileInView={{ opacity: 1, paddingTop: "0px" }}
-            transition={{ ease: "linear", duration: 0.5 }}
-            viewport={{ margin: "-200px" }}
+            transition={{ ease: "linear", duration: 0.2 }}
+            viewport={{ margin: "-100px" }}
             >
                 <>
                     <div className={isMobile? "block gap-x-5" : "flex flex-col gap-5" }>
