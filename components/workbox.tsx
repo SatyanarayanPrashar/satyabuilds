@@ -19,7 +19,7 @@ export const Workbox = () => {
                         <p className="text-[#4D4D4D] leading-[1.7rem] mt-[5px]">• Built the client facing website using NextJS, enabling investors and companies to share a common platform to
                         expand there portfolio and connection respectively</p>
                         <p className="text-[#4D4D4D] leading-[1.7rem] mt-[5px]">• Optimised the cross-browser compatibility to support screens of all sizes, and integrated APIs with the frontend</p>
-                        <p className="text-[#4D4D4D] leading-[1.7rem] mt-[5px]">• Improved landing page loading time by 40% using Lazy Loading by Dynamic imports</p>
+                        {/* <p className="text-[#4D4D4D] leading-[1.7rem] mt-[5px]">• Improved landing page loading time by 40% using Lazy Loading by Dynamic imports</p> */}
                         <p className="text-[#4D4D4D] leading-[1.7rem] mt-[5px]">• Conducted comprehensive user and competitor analysis to develop seamless UX, and created UI wireframes in
                         Figma utilizing frames and auto-layouts</p>
                     </div>

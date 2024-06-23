@@ -33,6 +33,11 @@ export const Navbar = () => {
                         Blogs
                     </Link>
                 </div>
+                <div className={path == "/resources" ? "bg-slate-100 border-[#dddddd] px-2 py-1 rounded-md" : ""}>
+                    <Link href={"/resources"}>
+                        Resources
+                    </Link>
+                </div>
             </div>    
         </div>
     )

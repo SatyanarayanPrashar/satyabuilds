@@ -2,7 +2,6 @@
 
 import { Footer } from "@/app/(landing)/_components/footer";
 import { useMediaQuery } from "usehooks-ts";
-import { Slide } from "react-awesome-reveal";
 import { motion } from "framer-motion";
 
 const AboutPage = () => {
