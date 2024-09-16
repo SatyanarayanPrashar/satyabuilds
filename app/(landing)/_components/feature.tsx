@@ -23,7 +23,7 @@ export const Feature = () => {
             >
                 <>
                     <h1 className="mt-[0.5rem] text-[1.5rem] leading-9 font-bold mb-7">Featured Projects</h1>
-                    <div className="flex gap-3 mb-3">
+                    {/* <div className="flex gap-3 mb-3">
                         <div
                             role="button"
                             onClick={() => setactiveStack('NextJS')}
@@ -42,25 +42,37 @@ export const Feature = () => {
                             className={`items-center flex gap-1 border-[#dddddd] border-[1px] rounded-lg px-3 py-1 hover:bg-slate-100 ${activeStack === 'Flutter' ? 'bg-slate-100' : ''}`}
                         > Flutter
                         </div>
-                        {/* <div
-                            role="button"
-                            onClick={() => setactiveStack('Native')}
-                            className={`items-center flex gap-1 border-[#dddddd] border-[1px] rounded-lg px-3 py-1 hover:bg-slate-100 ${activeStack === 'Native' ? 'bg-slate-100' : ''}`}
-                        > React Native
-                        </div> */}
-                    </div>
-                    <div className={ activeStack == 'NextJS' ? isMobile? "block gap-x-5" : "flex gap-5" : "hidden"}>
-                        <Projectbox title={"Edloops"} description={"An innovative EdTech platform for curating learning materials and building courses..."} link={"https://edloops.com/"} />
-                        <Projectbox title={"WeJournal"} description={"A collaborative journaling platform enabling solo and paired journaling experiences..."} link={"https://wejournal.vercel.app/"} />
-                    </div>
+                    </div> */}
+                    <Projectbox
+                        title="Recruto"
+                        p1="• Used Selenium to scrape data from other recruitment platform and automated it with Celery"
+                        p2="• Cached the API response using a Redis database, which reduces the second call response time by 92.5%"
+                        p3="• Techstack consisted of TypeScript, Next JS, Django Rest Framework, Redis and Docker"
+                        link="https://github.com/SatyanarayanPrashar/recuto_be"
+                    />
+                    <Projectbox
+                        title={"Edloops"}
+                        p1="• Created an innovative edTech platform for curating learning materials and building courses"
+                        p2="• Used NextJS for Frontend and implemented Redux for state management"
+                        p3="• Built RESTful APIs with Django Rest Framework and deployed the application on EC2, AWS"
+                        link={"https://edloops.com/"}
+                    />
+                    <Projectbox
+                        title={"WeJournal"}
+                        p1="• A collaborative journaling platform enabling solo and paired journaling experiences"
+                        p2="• NextJS, Zustad, Firebase "
+                        p3=""
+                        link={"https://wejournal.vercel.app/"}
+                    />
+                    {/* <div className={ activeStack == 'NextJS' ? isMobile? "block gap-x-5" : "flex gap-5" : "hidden"}> */}
+                    {/* </div>
                     <div className={ activeStack == 'Django' ? isMobile? "block gap-x-5" : "flex gap-5" : "hidden"}>
                         <Projectbox title={"Edloops BE"} description={"An innovative EdTech platform for curating learning materials and building courses, built with Django Rest FrameWork and deployed AWS EC2 Instance..."} link={"https://github.com/SatyanarayanPrashar/bucket"} />
-                        <Projectbox title={"Recruto BE"} description={"Replicated a Backend for a Recruitment Website, built with Django Rest FrameWork..."} link={"https://github.com/SatyanarayanPrashar/bucket"} />
                     </div>
                     <div className={ activeStack == 'Flutter' ? isMobile? "block gap-x-5" : "flex gap-5" : "hidden"}>
                         <Projectbox title={"Get It"} description={"An App for college students whose institute is located at outskirts of cities where services like Zepto, Danzo etc doesn't operate..."} link={"https://github.com/SatyanarayanPrashar/project-Get-it"} />
                         <Projectbox title={"Social Media App"} description={"A simple social media application built with Flutter, and Firebase..."} link={"https://github.com/SatyanarayanPrashar/Social_Media-app"} />
-                    </div>
+                    </div> */}
                 </>
             </motion.div>
             

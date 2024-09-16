@@ -28,7 +28,7 @@ const MarketingPage = () => {
         initial={{ opacity: 0, paddingTop: "20px" }}
         whileInView={{ opacity: 1, paddingTop: "0px" }}
         transition={{ ease: "linear", duration: 1 }}
-        viewport={{ margin: "-200px" }}
+        viewport={{ margin: "-100px" }}
         >
           <Heading />
         </motion.div>
