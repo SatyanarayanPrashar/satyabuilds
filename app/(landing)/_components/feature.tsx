@@ -8,6 +8,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { motion } from "framer-motion";
+import { DisplayBox } from "@/components/displayBox";
+import { WorkCards } from "@/components/listCards";
 
 export const Feature = () => {
     const isMobile = useMediaQuery("(max-width: 768px)");
@@ -15,34 +17,18 @@ export const Feature = () => {
 
     return (
         <div className="text-start w-full px-5 bg-white">
-            <motion.div
-            initial={{ opacity: 0, paddingTop: "20px" }}
-            whileInView={{ opacity: 1, paddingTop: "0px" }}
-            transition={{ ease: "linear", duration: 0.3 }}
-            viewport={{ margin: "-100px" }}
-            >
+            <DisplayBox>
+                <>
+                    <h1 className="mt-[3rem] text-[1.5rem] leading-9 font-bold mb-2">Work</h1>
+                    <div className={isMobile? "block gap-x-5" : "flex flex-col gap-5" }>
+                        {/* <Workbox /> */}
+                        <WorkCards />
+                    </div>
+                </>
+            </DisplayBox>
+            <DisplayBox>
                 <>
                     <h1 className="mt-[0.5rem] text-[1.5rem] leading-9 font-bold mb-7">Featured Projects</h1>
-                    {/* <div className="flex gap-3 mb-3">
-                        <div
-                            role="button"
-                            onClick={() => setactiveStack('NextJS')}
-                            className={`items-center flex gap-1 border-[#dddddd] border-[1px] rounded-lg px-3 py-1 hover:bg-slate-100 ${activeStack === 'NextJS' ? 'bg-slate-100' : ''}`}
-                        > NextJS
-                        </div>
-                        <div
-                            role="button"
-                            onClick={() => setactiveStack('Django')}
-                            className={`items-center flex gap-1 border-[#dddddd] border-[1px] rounded-lg px-3 py-1 hover:bg-slate-100 ${activeStack === 'Django' ? 'bg-slate-100' : ''}`}
-                        > Django
-                        </div>
-                        <div
-                            role="button"
-                            onClick={() => setactiveStack('Flutter')}
-                            className={`items-center flex gap-1 border-[#dddddd] border-[1px] rounded-lg px-3 py-1 hover:bg-slate-100 ${activeStack === 'Flutter' ? 'bg-slate-100' : ''}`}
-                        > Flutter
-                        </div>
-                    </div> */}
                     <Projectbox
                         title="Recruto"
                         p1="• Used Selenium to scrape data from other recruitment platform and automated it with Celery"
@@ -64,38 +50,9 @@ export const Feature = () => {
                         p3=""
                         link={"https://wejournal.vercel.app/"}
                     />
-                    {/* <div className={ activeStack == 'NextJS' ? isMobile? "block gap-x-5" : "flex gap-5" : "hidden"}> */}
-                    {/* </div>
-                    <div className={ activeStack == 'Django' ? isMobile? "block gap-x-5" : "flex gap-5" : "hidden"}>
-                        <Projectbox title={"Edloops BE"} description={"An innovative EdTech platform for curating learning materials and building courses, built with Django Rest FrameWork and deployed AWS EC2 Instance..."} link={"https://github.com/SatyanarayanPrashar/bucket"} />
-                    </div>
-                    <div className={ activeStack == 'Flutter' ? isMobile? "block gap-x-5" : "flex gap-5" : "hidden"}>
-                        <Projectbox title={"Get It"} description={"An App for college students whose institute is located at outskirts of cities where services like Zepto, Danzo etc doesn't operate..."} link={"https://github.com/SatyanarayanPrashar/project-Get-it"} />
-                        <Projectbox title={"Social Media App"} description={"A simple social media application built with Flutter, and Firebase..."} link={"https://github.com/SatyanarayanPrashar/Social_Media-app"} />
-                    </div> */}
                 </>
-            </motion.div>
-            
-            <motion.div
-            initial={{ opacity: 0, paddingTop: "20px" }}
-            whileInView={{ opacity: 1, paddingTop: "0px" }}
-            transition={{ ease: "linear", duration: 0.3 }}
-            viewport={{ margin: "-100px" }}
-            >
-                <>
-                    <h1 className="mt-[3rem] text-[1.5rem] leading-9 font-bold mb-7">Work</h1>
-                    <div className={isMobile? "block gap-x-5" : "flex flex-col gap-5" }>
-                        <Workbox />
-                    </div>
-                </>
-            </motion.div>
-
-            <motion.div
-            initial={{ opacity: 0, paddingTop: "20px" }}
-            whileInView={{ opacity: 1, paddingTop: "0px" }}
-            transition={{ ease: "linear", duration: 0.2 }}
-            viewport={{ margin: "-100px" }}
-            >
+            </DisplayBox>
+            <DisplayBox>
                 <>
                     <div className={isMobile? "block gap-x-5" : "flex flex-col gap-5" }>
                         <h1 className="mt-[2rem] text-[1.5rem] leading-9 font-bold mb-7">Featured Blogs</h1>
@@ -107,8 +64,7 @@ export const Feature = () => {
                         </Link>
                     </div>
                 </>
-            </motion.div>
-
+            </DisplayBox>
         </div>
     )
 }
