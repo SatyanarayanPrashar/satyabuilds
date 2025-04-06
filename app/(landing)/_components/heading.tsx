@@ -21,7 +21,7 @@ export const Heading = () => {
                 background-size: 300% 300%;
                 }
             `}</style>
-                <h1 className="text-7xl leading-snug font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-blue-500 to-green-500 animate-gradient">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl leading-snug font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-blue-500 to-green-500 animate-gradient">
                     Satyanarayan Prashar
                 </h1>
             </div>
@@ -36,7 +36,7 @@ export const Heading = () => {
                 />
             </div> */}
             
-            <p className="mt-4 text-[#4D4D4D] text-[1.15rem] leading-9 font-medium">
+            <p className="mt-4 text-[#4D4D4D] text-[1rem] sm:text-[1.15rem] leading-7 sm:leading-9 font-medium">
                 I enjoy creating things that live on the internet, whether that be website, or mobile application.
                 My goal is to always build products that provide pixel-perfect, performant experiences.
             </p>

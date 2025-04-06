@@ -2,18 +2,14 @@
 
 import { Blogbox } from "@/components/blogBox";
 import { Projectbox } from "@/components/projectContainer";
-import { Workbox } from "@/components/workbox";
-import { Workbox_single } from "@/components/workbox_single";
 import Link from "next/link";
 import { useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
-import { motion } from "framer-motion";
 import { DisplayBox } from "@/components/displayBox";
 import { WorkCards } from "@/components/listCards";
 
 export const Feature = () => {
     const isMobile = useMediaQuery("(max-width: 768px)");
-    const [activeStack, setactiveStack] = useState('NextJS') 
 
     return (
         <div className="text-start w-full px-5 bg-white">

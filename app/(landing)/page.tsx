@@ -6,6 +6,7 @@ import { Heading } from "./_components/heading";
 import { useMediaQuery } from "usehooks-ts";
 import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
+import { DisplayBox } from "@/components/displayBox";
 
 
 const MarketingPage = () => {
@@ -24,14 +25,7 @@ const MarketingPage = () => {
   return (
     <div className="min-h-full flex flex-col bg-[white]">
       <div className={isMobile ? "block " : "flex flex-col items-center justify-center text-center gap-y-8 flex-1 pb-10 lg:px-[40vh] md:px-[20px] sm:px-[10px]"}>
-        <motion.div
-        initial={{ opacity: 0, paddingTop: "20px" }}
-        whileInView={{ opacity: 1, paddingTop: "0px" }}
-        transition={{ ease: "linear", duration: 1 }}
-        viewport={{ margin: "-100px" }}
-        >
-          <Heading />
-        </motion.div>
+        <DisplayBox> <Heading /> </DisplayBox>
         <Feature />
         <Footer />
       </div>
