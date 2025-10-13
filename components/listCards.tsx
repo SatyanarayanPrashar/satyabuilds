@@ -63,13 +63,16 @@ export function WorkCards() {
             >
               <div className="flex gap-4 p-4">
                 <motion.div layoutId={`img-${active.title}-${id}`}>
-                  <img
+                  {active.src != "NA" ?<img
                     width={40}
                     height={40}
                     src={active.src}
                     alt={active.title}
-                    className="w-full h-20 lg:h-20 rounded-lg object-cover object-top border"
-                  />
+                    className="h-20 w-20 md:h-14 md:w-14 border rounded-lg object-cover object-top"
+                  />: <div className="h-20 w-20 md:h-14 md:w-14 border rounded-lg flex items-center justify-center">
+                    <p className="font-bold text-blue-800 text-xl">{active.description[0]}</p>
+                  </div>
+                  }
                 </motion.div>
                 <div>
                   <motion.h3 layoutId={`title-${active.title}-${id}`} className="font-bold text-neutral-700">
@@ -122,13 +125,16 @@ export function WorkCards() {
           >
             <div className="flex gap-4">
               <motion.div layoutId={`img-${card.title}-${id}`}>
-                <img
+                {card.src != "NA" ?<img
                   width={100}
                   height={100}
                   src={card.src}
                   alt={card.title}
                   className="h-20 w-20 md:h-14 md:w-14 border rounded-lg object-cover object-top"
-                />
+                />: <div className="h-20 w-20 md:h-14 md:w-14 border rounded-lg flex items-center justify-center">
+                  <p className="font-bold text-blue-800 text-xl">{card.description[0]}</p>
+                </div>
+                }
               </motion.div>
               <div>
                 <motion.h3 layoutId={`title-${card.title}-${id}`} className="font-medium text-neutral-500 text-left">
@@ -139,7 +145,7 @@ export function WorkCards() {
                 </motion.p>
               </div>
             </div>
-            <motion.button layoutId={`button-${card.title}-${id}`} className="px-4 py-2 text-sm rounded-full font-bo bg-gray-100 hover:bg-slate-300 hover:text-white text-black mt-4 md:mt-0">
+            <motion.button layoutId={`button-${card.title}-${id}`} className="px-4 py-2 text-sm rounded-full hover:underline text-black/50 mt-4 md:mt-0">
               {card.ctaText}
             </motion.button>
           </motion.div>
@@ -199,7 +205,7 @@ const cards = [
   {
     description: "Monter pvt ltd",
     title: "Frontend & UI/UX Developer Intern",
-    src: "https://media.licdn.com/dms/image/v2/D560BAQE4D1hWV9itpA/company-logo_200_200/company-logo_200_200/0/1735748985339/monter_one_logo?e=1749081600&v=beta&t=6UCOv5bW4PnHtvyOtQsewvBxeCpS6qFDQcCkXQgvwIA",
+    src: "NA",
     ctaText: "View",
     ctaLink: "",
     period: "May 2024 - July 2024",

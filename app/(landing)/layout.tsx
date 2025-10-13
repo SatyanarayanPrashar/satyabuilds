@@ -1,5 +1,4 @@
-import { Navbar } from "@/components/navbar";
-import { Sides } from "@/components/sides";
+import { ThemeProvider } from "next-themes";
 
 const MarketingLayout = ({
   children
@@ -7,10 +6,12 @@ const MarketingLayout = ({
   children: React.ReactNode;
 }) => {
   return ( 
-    <div className="h-full">
+    <div className="h-full scrollbar-hide [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
       {/* <Navbar /> */}
       <main className="h-full pt-[3rem]">
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </main>
     </div>
    );
