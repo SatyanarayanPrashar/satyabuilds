@@ -24,7 +24,7 @@ export const CustomScrollbar = () => {
           style={{ transform: "translateY(-50%)" }}
         >
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-4">
-            <Link href={"/home"} className={cn("p-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition", path == "/" && "bg-gray-400")}>
+            <Link href={"/"} className={cn("p-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition", path == "/" && "bg-gray-400")}>
               <Home size={16}/>
             </Link>
             <Link href={"/about"} className={cn("p-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition", path == "/about" && "bg-gray-400")}>
