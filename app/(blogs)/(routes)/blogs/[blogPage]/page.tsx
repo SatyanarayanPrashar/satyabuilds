@@ -8,6 +8,7 @@ import { Slide } from "react-awesome-reveal";
 import { useMediaQuery } from "usehooks-ts";
 import { LoadingBox } from "@/components/loading";
 import { usePathname } from "next/navigation";
+import { CustomScrollbar } from "@/components/CustomScrollbar";
 
 type BlogInfo = {
     title: string;
@@ -59,6 +60,7 @@ const BlogPage = () => {
 
     return (
         <div className="min-h-full flex flex-col bg-[white]">
+            <CustomScrollbar />
            <div className={isMobile ? "block px-[20px]" : "flex flex-col justify-center text-start gap-y-8 flex-1 pb-10 lg:px-[48vh] md:px-[20px] sm:px-[10px]"}>
                 <Slide delay={0.5} direction="up" triggerOnce={true}>
                     <h1 className="text-[40px] font-bold">{currentBlog?.title}</h1>

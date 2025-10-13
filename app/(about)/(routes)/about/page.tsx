@@ -3,12 +3,14 @@
 import { Footer } from "@/app/(landing)/_components/footer";
 import { useMediaQuery } from "usehooks-ts";
 import { motion } from "framer-motion";
+import { CustomScrollbar } from "@/components/CustomScrollbar";
 
 const AboutPage = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   
   return (
     <div className="min-h-full flex flex-col px-[20px] text-justify bg-[white]">
+      <CustomScrollbar />
       <div className={isMobile ? "block" : "flex flex-col gap-y-8 flex-1 pb-10 lg:px-[45vh] md:px-[20px] sm:px-[10px]"}>
       <motion.div
         initial={{ opacity: 0, paddingTop: "20px" }}

@@ -1,9 +1,6 @@
 "use client";
 
-import { Blogbox } from "@/components/blogBox";
 import { Projectbox } from "@/components/projectContainer";
-import Link from "next/link";
-import { useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { DisplayBox } from "@/components/displayBox";
 import { WorkCards } from "@/components/listCards";
@@ -47,7 +44,7 @@ export const Feature = () => {
                     />
                 </>
             </DisplayBox>
-            <DisplayBox>
+            {/* <DisplayBox>
                 <>
                     <div className={isMobile? "block gap-x-5" : "flex flex-col gap-5" }>
                         <h1 className="mt-[2rem] text-[1.5rem] leading-9 font-bold mb-7">Featured Blogs</h1>
@@ -59,7 +56,7 @@ export const Feature = () => {
                         </Link>
                     </div>
                 </>
-            </DisplayBox>
+            </DisplayBox> */}
         </div>
     )
 }

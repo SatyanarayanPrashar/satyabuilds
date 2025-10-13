@@ -1,45 +1,46 @@
 "use client";
 
 import { useScrollThumb } from "@/hooks/useScrollThumb";
-import { ArrowUp, ArrowDown, Music, Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { BookText, Home, PersonStanding} from "lucide-react";
+import { useRef } from "react";
 import { AudioPlayer } from "./music";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useMediaQuery } from "usehooks-ts";
+import { cn } from "@/lib/utils";
 
 export const CustomScrollbar = () => {
-  const thumbTop = useScrollThumb();
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
-
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  const thumbRef = useRef<HTMLDivElement>(null);
+  useScrollThumb(thumbRef);
+  const path = usePathname();
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
-    <div className="fixed right-6 top-0 h-full flex items-center z-50">
+    <div className="fixed right-6 top-0 h-full flex items-center z-50 pointer-events-none">
       <div className="relative h-[70vh] w-12 bg-transparent rounded-full mx-auto">
-        {/* Scrollbar Thumb */}
         <div
-          className="absolute left-[20px] w-full h-40 bg-stone-900 rounded-full transition-all duration-200"
-          style={{ top: `${thumbTop}%`, transform: "translateY(-50%)" }}
+          ref={thumbRef}
+          className="absolute left-[20px] w-full h-[10rem] bg-stone-900 rounded-full pointer-events-auto"
+          style={{ transform: "translateY(-50%)" }}
         >
-
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-4">
-            <button
+            <Link href={"/home"} className={cn("p-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition", path == "/" && "bg-gray-400")}>
+              <Home size={16}/>
+            </Link>
+            <Link href={"/about"} className={cn("p-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition", path == "/about" && "bg-gray-400")}>
+              <PersonStanding size={16}/>
+            </Link>
+            {/* <Link href={"/blogs"} className={cn("p-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition", path == "/blogs" && "bg-gray-400")}>
+              <BookText size={16}/>
+            </Link> */}
+
+            <AudioPlayer />
+            {/* <button
               onClick={scrollToTop}
               className="p-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition"
             >
               <ArrowUp size={16} />
-            </button>
-            {mounted && (
-              <button
-                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-                className="p-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition"
-              >
-                {theme === "light" ? <Moon size={16} /> : <Sun size={16} />}
-              </button>
-            )}
-            <AudioPlayer />
+            </button> */}
           </div>
         </div>
       </div>

@@ -1,21 +1,33 @@
-import { useEffect, useState } from "react";
+import { useEffect, RefObject } from "react";
 
-export const useScrollThumb = () => {
-  const [thumbTop, setThumbTop] = useState(0);
-
+export const useScrollThumb = (thumbRef: RefObject<HTMLDivElement>) => {
   useEffect(() => {
+    let animationFrameId: number;
+
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const scrollHeight = document.body.scrollHeight - window.innerHeight;
-      const scrollRatio = scrollTop / scrollHeight;
-      setThumbTop(scrollRatio * 100);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+
+      animationFrameId = requestAnimationFrame(() => {
+        if (!thumbRef.current) return;
+        const scrollTop = window.scrollY;
+        const scrollHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollRatio = scrollHeight > 0 ? scrollTop / scrollHeight : 0;
+        const thumbTopPercent = scrollRatio * 100;
+        thumbRef.current.style.top = `${thumbTopPercent}%`;
+      });
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
     handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  return thumbTop; // returns 0–100 for percentage
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
+  }, [thumbRef]);
 };
