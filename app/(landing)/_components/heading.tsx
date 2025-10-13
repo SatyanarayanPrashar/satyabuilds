@@ -1,59 +1,44 @@
 "use client";
 
-import { motion } from 'framer-motion';
-import { File, Github, Linkedin, Twitter } from 'lucide-react';
-import Typewriter from 'typewriter-effect';
+import { DisplayBox } from "@/components/displayBox"
+import { Linkedin, Mail, MapPin, Twitter } from "lucide-react"
+import Image from "next/image"
 
 export const Heading = () => {
-    
 
     return (
         <div className="text-start w-full px-5 bg-white">
-            <div className="">
-            <style jsx>{`
-                @keyframes gradient {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
-                }
-                .animate-gradient {
-                animation: gradient 5s ease infinite;
-                background-size: 300% 300%;
-                }
-            `}</style>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl leading-snug font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-blue-500 to-green-500 animate-gradient">
-                    Satyanarayan Prashar
-                </h1>
-            </div>
-            {/* <div className="text-5xl leading-snug font-extrabold transition-all duration-300 ease-in-out]">
-                <Typewriter
-                    onInit={(typewriter) => {
-                        typewriter
-                            .pauseFor(500)
-                            .typeString("Satyanarayan Prashar")
-                            .start();
-                    }}
-                />
-            </div> */}
+            <DisplayBox classname="flex border rounded-xl p-4 gap-4 bg-[linear-gradient(45deg,transparent_25%,rgba(68,68,68,.2)_50%,transparent_75%,transparent_100%)] bg-zinc-100 relative overflow-hidden border-slate-200 bg-[length:250%_250%,100%_100%] bg-[position:-100%_0,0_0] bg-no-repeat w-full transition-[background-position_0s_ease] hover:bg-[position:200%_0,0_0] hover:duration-[1500ms]">
+                <Image src="/profile.png" alt="profile" width={160} height={160} className="rounded-xl border border-gray-300 bg-cover mt-4"/>
+                <div className="mt-4 flex flex-col">
+                    <h1 className="text-3xl leading-snug">Satyanarayan Prashar</h1>
+                    <div className="flex gap-2 items-center text-[#4D4D4D] text-sm">
+                        Software Engineer
+                    </div>
+                    <div className="flex gap-2 items-center text-[#4D4D4D] text-sm mt-2">
+                        <MapPin size={18}/>
+                        <p>Bangalore, India</p>
+                    </div>
+                    <div className="flex gap-2 items-center text-[#4D4D4D] text-sm mt-2">
+                        <Mail size={18}/>
+                        <p>satyanarayanprashar73@gmail.com</p>
+                    </div>
+                    <a className="flex gap-2 items-center text-[#4D4D4D] text-sm mt-2 hover:underline w-fit" href="https://www.linkedin.com/in/satyanarayan-prashar-57a170229/" target="_blank" rel="noopener noreferrer">
+                        <Linkedin size="20px"/> LinkedIn
+                    </a>
+                    <a className="flex gap-2 items-center text-[#4D4D4D] text-sm mt-2 hover:underline w-fit" href="https://x.com/Satya021Don" target="_blank" rel="noopener noreferrer">
+                        <Twitter size="20px"/> @Satya021Don
+                    </a>
+                </div>
+            </DisplayBox>
             
-            <p className="mt-4 text-[#4D4D4D] text-[1rem] sm:text-[1.15rem] leading-7 sm:leading-9 font-medium">
-                I enjoy creating things that live on the internet, whether that be website, or mobile application.
-                My goal is to always build products that provide pixel-perfect, performant experiences.
-            </p>
-            <div className="flex gap-3 items-center mt-5 text-[#4D4D4D]">
-                <a href="https://github.com/SatyanarayanPrashar" target="_blank" rel="noopener noreferrer" className="items-center flex gap-1 border-[#dddddd] border-[1px] rounded-lg px-3 py-1 hover:bg-slate-100">
-                    <Github size="20px"/> Github
-                </a>
-                <a href="https://www.linkedin.com/in/satyanarayan-prashar-57a170229/" target="_blank" rel="noopener noreferrer" className="items-center flex gap-1 border-[#dddddd] border-[1px] rounded-lg px-3 py-1 hover:bg-slate-100">
-                    <Linkedin size="20px"/> LinkedIn
-                </a>
-                <a href="https://twitter.com/Satya021Don" target="_blank" rel="noopener noreferrer" className="items-center flex gap-1 border-[#dddddd] border-[1px] rounded-lg px-3 py-1 hover:bg-slate-100">
-                    <Twitter size="20px"/> X(twitter)
-                </a>
-                {/* <a href="satyanarayan.pdf" target="_blank" rel="noopener noreferrer" className="items-center flex gap-1 border-[#dddddd] border-[1px] rounded-lg px-3 py-1 hover:bg-slate-100">
-                    <File size="20px"/> Resume
-                </a> */}
-            </div>
+            <DisplayBox>
+                <div className="flex flex-col gap-3 mt-4 text-[#4D4D4D] text-md">
+                    <p>I enjoy creating things that live on the internet and sometimes in people's terminals.</p>
+                    <p>You can find me building Efficient RAG piplines, or systems which utilizes my agent's context window to the fullest.</p>
+                    <p>Heavily interested in Edtech, particullarly finding out how human brain uses patterns to learn things faster, or how can we learn to learn things faster.</p>
+                </div>
+            </DisplayBox>
         </div>
     )
 }

@@ -25,7 +25,7 @@ const MarketingPage = () => {
   return (
     <div className="min-h-full flex flex-col bg-[white]">
       <div className={isMobile ? "block " : "flex flex-col items-center justify-center text-center gap-y-8 flex-1 pb-10 lg:px-[40vh] md:px-[20px] sm:px-[10px]"}>
-        <DisplayBox> <Heading /> </DisplayBox>
+        <Heading />
         <Feature />
         <Footer />
       </div>

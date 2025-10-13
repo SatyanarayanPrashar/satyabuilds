@@ -17,7 +17,6 @@ export const Feature = () => {
                 <>
                     <h1 className="mt-[3rem] text-[1.5rem] leading-9 font-bold mb-2">Work</h1>
                     <div className={isMobile? "block gap-x-5" : "flex flex-col gap-5" }>
-                        {/* <Workbox /> */}
                         <WorkCards />
                     </div>
                 </>

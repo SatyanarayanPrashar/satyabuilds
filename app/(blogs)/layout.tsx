@@ -7,8 +7,8 @@ const BlogspageLayout = ({
 }) => {
   return ( 
     <div className="h-">
-      <Navbar />
-      <main className="h-full pt-[9rem]">
+      {/* <Navbar /> */}
+      <main className="h-full pt-[3rem]">
         {children}
       </main>
     </div>

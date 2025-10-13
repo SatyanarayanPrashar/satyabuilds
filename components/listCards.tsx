@@ -127,7 +127,7 @@ export function WorkCards() {
                   height={100}
                   src={card.src}
                   alt={card.title}
-                  className="h-20 w-20 md:h-14 md:w-14 rounded-lg object-cover object-top"
+                  className="h-20 w-20 md:h-14 md:w-14 border rounded-lg object-cover object-top"
                 />
               </motion.div>
               <div>
@@ -185,15 +185,15 @@ export const CloseIcon = () => {
 const cards = [
   {
     description: "SAP Concur",
-    title: "Automation Intern",
+    title: "Automation and Innovation Engineer",
     src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1gDhu93w4QCSPMGWxzJMv8QN3tqPQe4zfuMnOo_GPdixUFBcW4FCKE4PfXrV5l-epeBg&usqp=CAU",
     ctaText: "View",
     ctaLink: "",
     period: "Jan 2025 - Current",
     details: [
-      " Developing softwares and scripts for more than 800 Suport Engineers, enabling them to automate their daily tasks and improve productivity.",
-      " Built a web application using Django, enabling managers and support engineers to track and manage their daily tasks and availability.",
-      " Building AI Agents and LLM integrations to automate the process of creating and managing tickets."
+      " Developed automation software to streamline repetitive workflows, enhancing operational efficiency for over 1,000 support engineers and significantly reducing manual effort",
+      " Designed and implemented CaseAI, a Retrieval-Augmented Generation (RAG) based internal AI tool that processes multiple Salesforce reports to provide contextually aware & accurate support responses",
+      " Scaled existing solutions to support a growing user base across multiple regions, leveraging distributed systems to ensure performance, reliability, and low-latency access"
     ]
   },
   {
