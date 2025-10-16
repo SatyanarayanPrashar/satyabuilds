@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/navbar";
+import { CustomScrollbar } from "@/components/CustomScrollbar";
 
 const BlogspageLayout = ({
   children
@@ -7,7 +7,7 @@ const BlogspageLayout = ({
 }) => {
   return ( 
     <div className="h-">
-      {/* <Navbar /> */}
+      <CustomScrollbar />
       <main className="h-full pt-[3rem]">
         {children}
       </main>

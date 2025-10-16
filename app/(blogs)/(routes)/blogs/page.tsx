@@ -17,30 +17,8 @@ type Blog = {
 };
 
 const BlogsPage = () => {
-  const [blogs, setBlogs] = useState<Blog[]>([]);
   const isMobile = useMediaQuery("(max-width: 768px)");
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const q = query(collection(db, "blogs"));
-        const querySnapshot = await getDocs(q);
-        const blogData = querySnapshot.docs.map(doc => ({
-          title: doc.id,
-          description: doc.data().description,
-          content: doc.data().content // Adding content if available
-        }));
-        setBlogs(blogData);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching blogs:", error);
-        setLoading(false);
-      }
-    };
-
-    fetchBlogs();
-  }, []);
+  const [loading, setLoading] = useState(false);
 
   if(loading) {
     return (
@@ -51,18 +29,15 @@ const BlogsPage = () => {
   }
 
   return (
-    <div className="min-h-full flex flex-col px-[20px] text-justify">
-      <div className={isMobile ? "block" : "flex flex-col gap-y-8 flex-1 pb-10 lg:px-[45vh] md:px-[20px] sm:px-[10px]"}>
-        <Slide delay={0.5} direction="up" triggerOnce={true}>
-          <h1 className="text-[40px] font-bold">Blogs</h1>
-          {blogs.map(blog => (
-            <Link href={`/blogs/${blog.title}`}>
-                <Blogbox key={blog.title} title={blog.title} description={blog.description} />
-            </Link>
-          ))}
-        </Slide>
-        <Footer />
+    <div className="min-h-screen justify-between flex flex-col gap-y-8 flex-1 pb-10 lg:px-[45vh] md:px-[20px] sm:px-[10px]">
+      <div className="flex flex-col">
+        <h1 className="text-[40px] font-bold">Blogs</h1>
+        <Link href={"/blogs/technical/Transformers-Explained"} className="hover:bg-gray-200 mt-10 p-2 rounded-xl">
+          <p className="text-xl font-medium">Transformers Explained</p>
+          <p className="text-md text-gray-500">Understanding what are transformers, why we needed them, and how do they do what they do..</p>
+        </Link>
       </div>
+      <Footer />
     </div>
   );
 }

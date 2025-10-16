@@ -16,23 +16,23 @@ export const CustomScrollbar = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
-    <div className="fixed right-6 top-0 h-full flex items-center z-50 pointer-events-none">
+    <div className={cn("fixed h-full flex items-center z-50 pointer-events-none", !isMobile ? "right-6 top-0" : "")}>
       <div className="relative h-[70vh] w-12 bg-transparent rounded-full mx-auto">
         <div
           ref={thumbRef}
-          className="absolute left-[20px] w-full h-[10rem] bg-stone-900 rounded-full pointer-events-auto"
+          className="absolute left-[20px] w-full h-[12rem] bg-stone-900 rounded-full pointer-events-auto"
           style={{ transform: "translateY(-50%)" }}
         >
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-4">
-            <Link href={"/"} className={cn("p-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition", path == "/" && "bg-gray-400")}>
+            <Link href={"/"} className={cn("p-2 bg-gray-200 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition", path == "/" && "bg-gray-400")}>
               <Home size={16}/>
             </Link>
-            <Link href={"/about"} className={cn("p-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition", path == "/about" && "bg-gray-400")}>
+            <Link href={"/about"} className={cn("p-2 bg-gray-200 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition", path == "/about" && "bg-gray-400")}>
               <PersonStanding size={16}/>
             </Link>
-            {/* <Link href={"/blogs"} className={cn("p-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition", path == "/blogs" && "bg-gray-400")}>
+            <Link href={"/blogs"} className={cn("p-2 bg-gray-200 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition", path == "/blogs" && "bg-gray-400")}>
               <BookText size={16}/>
-            </Link> */}
+            </Link>
 
             <AudioPlayer />
             {/* <button

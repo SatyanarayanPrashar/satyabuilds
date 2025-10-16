@@ -17,22 +17,6 @@ export function AudioPlayer() {
     setIsPlaying(!isPlaying);
   };
 
-  // Auto-play audio when component mounts
-  useEffect(() => {
-    const playAudio = async () => {
-      try {
-        if (audioRef.current) {
-          await audioRef.current.play();
-          setIsPlaying(true);
-        }
-      } catch (err) {
-        console.warn("Autoplay blocked by browser:", err);
-      }
-    };
-
-    playAudio();
-  }, []);
-
   return (
     <div className="flex items-center gap-2 bg-gray-200 dark:bg-gray-700 rounded-full">
       <button
