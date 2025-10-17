@@ -16,7 +16,7 @@ export const Heading = () => {
             )}>
                 <Image src="/profile.png" alt="profile" width={160} height={160} className="rounded-xl border border-gray-300 bg-cover mt-4"/>
                 <div className="mt-4 flex flex-col">
-                    <h1 className="text-3xl leading-snug">Satyanarayan Prashar</h1>
+                    <h1 className="text-3xl leading-snug">Satya</h1>
                     <div className="flex gap-2 items-center text-[#4D4D4D] text-sm">
                         Software Engineer
                     </div>
