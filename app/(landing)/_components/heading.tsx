@@ -26,7 +26,7 @@ export const Heading = () => {
                     </div>
                     <div className="flex gap-2 items-center text-[#4D4D4D] text-sm mt-2">
                         <Mail size={18}/>
-                        <p>satyanarayanprashar73@gmail.com</p>
+                        <p>satyanarayan.pr29@gmail.com</p>
                     </div>
                     <a className="flex gap-2 items-center text-[#4D4D4D] text-sm mt-2 hover:underline w-fit" href="https://www.linkedin.com/in/satyanarayan-prashar-57a170229/" target="_blank" rel="noopener noreferrer">
                         <Linkedin size="20px"/> LinkedIn
