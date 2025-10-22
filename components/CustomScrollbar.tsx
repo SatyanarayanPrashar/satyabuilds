@@ -20,7 +20,7 @@ export const CustomScrollbar = () => {
       <div className="relative h-[70vh] w-12 bg-transparent rounded-full mx-auto">
         <div
           ref={thumbRef}
-          className="absolute left-[20px] w-full h-[12rem] bg-stone-900 rounded-full pointer-events-auto"
+          className="absolute left-[20px] w-full h-[12rem] bg-gray-400 rounded-full pointer-events-auto"
           style={{ transform: "translateY(-50%)" }}
         >
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-4">

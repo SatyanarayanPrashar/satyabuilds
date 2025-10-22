@@ -3,7 +3,6 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
-import Link from "next/link";
 
 export function WorkCards() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(null);

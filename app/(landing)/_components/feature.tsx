@@ -4,6 +4,7 @@ import { Projectbox } from "@/components/projectContainer";
 import { useMediaQuery } from "usehooks-ts";
 import { DisplayBox } from "@/components/displayBox";
 import { WorkCards } from "@/components/listCards";
+import Link from "next/link";
 
 export const Feature = () => {
     const isMobile = useMediaQuery("(max-width: 768px)");
@@ -12,7 +13,7 @@ export const Feature = () => {
         <div className="text-start w-full px-5 bg-white">
             <DisplayBox>
                 <>
-                    <h1 className="mt-[3rem] text-[1.5rem] leading-9 font-bold mb-2">Work</h1>
+                    <h1 className="mt-[3rem] text-[1.5rem] leading-9 font-semibold mb-2 text-[#141413]">Work</h1>
                     <div className={isMobile? "block gap-x-5" : "flex flex-col gap-5" }>
                         <WorkCards />
                     </div>
@@ -20,43 +21,51 @@ export const Feature = () => {
             </DisplayBox>
             <DisplayBox>
                 <>
-                    <h1 className="mt-[0.5rem] text-[1.5rem] leading-9 font-bold mb-7">Featured Projects</h1>
-                    <Projectbox
-                        title="Recruto"
-                        p1="• Used Selenium to scrape data from other recruitment platform and automated it with Celery"
-                        p2="• Cached the API response using a Redis database, which reduces the second call response time by 92.5%"
-                        p3="• Techstack consisted of TypeScript, Next JS, Django Rest Framework, Redis and Docker"
-                        link="https://github.com/SatyanarayanPrashar/recuto_be"
-                    />
-                    <Projectbox
-                        title={"Edloops"}
-                        p1="• Created an innovative edTech platform for curating learning materials and building courses"
-                        p2="• Used NextJS for Frontend and implemented Redux for state management"
-                        p3="• Built RESTful APIs with Django Rest Framework and deployed the application on EC2, AWS"
-                        link={"https://edloops.com/"}
-                    />
-                    <Projectbox
-                        title={"WeJournal"}
-                        p1="• A collaborative journaling platform enabling solo and paired journaling experiences"
-                        p2="• NextJS, Zustad, Firebase "
-                        p3=""
-                        link={"https://wejournal.vercel.app/"}
-                    />
+                    <h1 className="mt-[0.5rem] text-[1.5rem] leading-9 font-semibold mb-2 text-[#141413]">Blogs</h1>
+                    {/* <Link href={"/blogs/technical/Transformers-Explained"} className="hover:bg-gray-200 mt-10 p-2 rounded-xl">
+                        <p className="text-xl font-medium">Transformers Explained</p>
+                        <p className="text-md text-gray-500">Understanding what are transformers, why we needed them, and how do they do what they do..</p>
+                        </Link> */}
+                    <Link
+                        href={"/blogs/technical/Context-window-to-full-extent"}
+                        className="p-1 sm:p-4 flex flex-col hover:bg-slate-100 hover:border-[#dddddd] rounded-lg cursor-pointer"
+                    >
+                        <p className="text-xl font-medium">Context window to full extent</p>
+                        <p className="text-md text-gray-500">This blog covers techniques for building efficient agentic AI—RAG, compaction, structured notes, and sub-agents to manage context, reduce overload, and maintain long-term coherence.</p>
+                    </Link>
                 </>
             </DisplayBox>
-            {/* <DisplayBox>
+            <DisplayBox>
                 <>
-                    <div className={isMobile? "block gap-x-5" : "flex flex-col gap-5" }>
-                        <h1 className="mt-[2rem] text-[1.5rem] leading-9 font-bold mb-7">Featured Blogs</h1>
-                        <Link href={"/blogs/Decision-Making-Framework/"}>
-                            <Blogbox title="Decision-Making-Framework" description="Irrespective of the decision, the pace at which it is made can significantly determine the success of that decision. I divide the decisions I have to take into two..." />
-                        </Link>
-                        <Link href={"/blogs/Why-I-choose-PM-and-later-moved-out/"}>
-                            <Blogbox title="Why-I-choose-PM-and-later-moved-out" description="Why I thought Product Management is a fitting role for me but after 9 months of internship I choose to switch..." />
-                        </Link>
+                    <h1 className="mt-[0.5rem] text-[1.5rem] leading-9 font-semibold mb-7 text-[#141413]">Featured Projects</h1>
+                    <div className="grid grid-cols-2 gap-4">
+                        <Projectbox
+                            title={"Docarite"}
+                            description="An AI-powered GitHub PR reviewer that automates code review, reducing review time and catching critical bugs earlier in the development cycle."
+                            link={"https://docarite.com/"}
+                            techStack={["LLM", "Langgraph", "Langfuse", "Python", "TypeScript", "Django", "Next JS", "PostgreSQL", "Docker", "AWS", "Tailwind"]}
+                        />
+                        <Projectbox
+                            title={"Edloops"}
+                            description="A platform to build personalised courses based on your needs. The Agentic system researches, structures, curates content and build quizzes into a comprehensive learning path and adapts to your progress."
+                            link={"https://edloops.com/"}
+                            techStack={["TypeScript", "Next.js", "Langchain", "LLM", "PostgreSQL", "Tailwind", "Redux", "Prisma"]}
+                        />
+                        {/* <Projectbox
+                            title={"Recruto"}
+                            description="• Used Selenium to scrape data from other recruitment platform and automated it with Celery"
+                            link={""}
+                            techStack={[]}
+                        />
+                        <Projectbox
+                            title={"WeJournal"}
+                            description="• A collaborative journaling platform enabling solo and paired journaling experiences"
+                            link={"https://wejournal.vercel.app/"}
+                            techStack={[]}
+                        /> */}
                     </div>
                 </>
-            </DisplayBox> */}
+            </DisplayBox>
         </div>
     )
 }

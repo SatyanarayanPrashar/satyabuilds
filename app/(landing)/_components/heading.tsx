@@ -39,9 +39,9 @@ export const Heading = () => {
             
             <DisplayBox>
                 <div className="flex flex-col gap-3 mt-4 text-[#4D4D4D] text-md">
-                    <p>I enjoy creating things that live on the internet and sometimes in people's terminals.</p>
-                    <p>You can find me building efficient RAG piplines, or systems which utilizes agent's context window to the fullest.</p>
-                    <p>Heavily interested in Edtech, particullarly finding out how human brain uses patterns to learn things faster, or how can we learn to learn things faster.</p>
+                    I build systems that live on the internet and occasionally, in the terminal.
+                    My work focuses on developing efficient RAG pipelines and designing agentic architectures that leverage context windows to their fullest potential.
+                    I’m particularly passionate about EdTech, with a strong interest in how the human brain identifies patterns to accelerate learning — and how technology can help us learn more effectively.
                 </div>
             </DisplayBox>
         </div>

@@ -36,6 +36,10 @@ const BlogsPage = () => {
           <p className="text-xl font-medium">Transformers Explained</p>
           <p className="text-md text-gray-500">Understanding what are transformers, why we needed them, and how do they do what they do..</p>
         </Link>
+        <Link href={"/blogs/technical/Context-window-to-full-extent"} className="hover:bg-gray-200 mt-10 p-2 rounded-xl">
+          <p className="text-xl font-medium">Context window to full extent</p>
+          <p className="text-md text-gray-500">This blog covers techniques for building efficient agentic AI—RAG, compaction, structured notes, and sub-agents to manage context, reduce overload, and maintain long-term coherence.</p>
+        </Link>
       </div>
       <Footer />
     </div>
