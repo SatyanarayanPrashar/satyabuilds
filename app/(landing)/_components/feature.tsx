@@ -27,6 +27,13 @@ export const Feature = () => {
                         <p className="text-md text-gray-500">Understanding what are transformers, why we needed them, and how do they do what they do..</p>
                         </Link> */}
                     <Link
+                        href={"/blogs/technical/Building-reliable-multi-agent-AI-systems"}
+                        className="p-1 sm:p-4 flex flex-col hover:bg-slate-100 hover:border-[#dddddd] rounded-lg cursor-pointer"
+                    >
+                        <p className="text-xl font-medium">Building reliable multi-agent AI systems</p>
+                        <p className="text-md text-gray-500">In this blog I have covered what it takes to build a reliable multi-agent systems...</p>
+                    </Link>
+                    <Link
                         href={"/blogs/technical/Context-window-to-full-extent"}
                         className="p-1 sm:p-4 flex flex-col hover:bg-slate-100 hover:border-[#dddddd] rounded-lg cursor-pointer"
                     >
