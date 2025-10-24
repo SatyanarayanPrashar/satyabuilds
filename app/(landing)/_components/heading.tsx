@@ -11,10 +11,10 @@ export const Heading = () => {
 
     return (
         <div className="text-start w-full px-5 bg-white">
-            <DisplayBox classname={cn("flex border rounded-xl p-4 gap-4 bg-[linear-gradient(45deg,transparent_25%,rgba(68,68,68,.2)_50%,transparent_75%,transparent_100%)] bg-zinc-100 relative overflow-hidden border-slate-200 bg-[length:250%_250%,100%_100%] bg-[position:-100%_0,0_0] bg-no-repeat w-full transition-[background-position_0s_ease] hover:bg-[position:200%_0,0_0] hover:duration-[1500ms]",
+            <DisplayBox classname={cn("flex flex-col sm:flex-row border rounded-xl p-4 gap-4 bg-[linear-gradient(45deg,transparent_25%,rgba(68,68,68,.2)_50%,transparent_75%,transparent_100%)] bg-zinc-100 relative overflow-hidden border-slate-200 bg-[length:250%_250%,100%_100%] bg-[position:-100%_0,0_0] bg-no-repeat w-full transition-[background-position_0s_ease] hover:bg-[position:200%_0,0_0] hover:duration-[1500ms]",
                 isMobile && "flex-col"
             )}>
-                <Image src="/profile.png" alt="profile" width={160} height={160} className="rounded-xl border border-gray-300 bg-cover mt-4"/>
+                <Image src="/profile.png" alt="profile" width={160} height={160} className="hidden sm:block rounded-xl border border-gray-300 bg-cover mt-4"/>
                 <div className="mt-4 flex flex-col">
                     <h1 className="text-3xl leading-snug">Satya</h1>
                     <div className="flex gap-2 items-center text-[#4D4D4D] text-sm">

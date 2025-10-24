@@ -12,7 +12,7 @@ export const Projectbox = ( {title, description, link, techStack } : ProjectBoxP
     const isMobile = useMediaQuery("(max-width: 768px)");
 
     return (
-        <div className={isMobile ? "flex w-full bg-white border-[#dddddd] border-[1px] rounded-lg flex-col p-4 my-[18px] hove:bg-slate-100"
+        <div className={isMobile ? "flex w-full bg-white border-[#dddddd] border-[1px] rounded-lg flex-col p-4 hove:bg-slate-100"
             : "flex justify-between w-full bg-white border-[#dddddd] border-[1px] rounded-lg flex-col p-4 hove:bg-slate-100"}>
             <>
                 <p className="font-[600]">{title}</p>

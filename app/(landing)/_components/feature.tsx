@@ -5,6 +5,7 @@ import { useMediaQuery } from "usehooks-ts";
 import { DisplayBox } from "@/components/displayBox";
 import { WorkCards } from "@/components/listCards";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 export const Feature = () => {
     const isMobile = useMediaQuery("(max-width: 768px)");
@@ -44,8 +45,8 @@ export const Feature = () => {
             </DisplayBox>
             <DisplayBox>
                 <>
-                    <h1 className="mt-[0.5rem] text-[1.5rem] leading-9 font-semibold mb-7 text-[#141413]">Featured Projects</h1>
-                    <div className="grid grid-cols-2 gap-4">
+                    <h1 className={cn("mt-[0.5rem] text-[1.5rem] leading-9 font-semibold mb-7 text-[#141413]", isMobile && "mt-0")}>Featured Projects</h1>
+                    <div className={cn("grid grid-cols-2 gap-4", isMobile && "grid-cols-1 gap-2")}>
                         <Projectbox
                             title={"Docarite"}
                             description="An AI-powered GitHub PR reviewer that automates code review, reducing review time and catching critical bugs earlier in the development cycle."

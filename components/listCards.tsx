@@ -67,7 +67,7 @@ export function WorkCards() {
                     height={40}
                     src={active.src}
                     alt={active.title}
-                    className="h-20 w-20 md:h-14 md:w-14 border rounded-lg object-cover object-top"
+                    className="min-h-20 min-w-20 md:h-14 md:w-14 border rounded-lg object-cover object-top"
                   />: <div className="h-20 w-20 md:h-14 md:w-14 border rounded-lg flex items-center justify-center">
                     <p className="font-bold text-blue-800 text-xl">{active.description[0]}</p>
                   </div>
@@ -123,7 +123,7 @@ export function WorkCards() {
             className="p-1 sm:p-4 flex flex-row justify-between items-center hover:bg-slate-100 hover:border-[#dddddd] rounded-lg cursor-pointer"
           >
             <div className="flex gap-4">
-              <motion.div layoutId={`img-${card.title}-${id}`}>
+              {/* <motion.div layoutId={`img-${card.title}-${id}`}>
                 {card.src != "NA" ?<img
                   width={100}
                   height={100}
@@ -134,7 +134,7 @@ export function WorkCards() {
                   <p className="font-bold text-blue-800 text-xl">{card.description[0]}</p>
                 </div>
                 }
-              </motion.div>
+              </motion.div> */}
               <div>
                 <motion.h3 layoutId={`title-${card.title}-${id}`} className="font-medium text-neutral-500 text-left">
                   {card.title}
@@ -189,7 +189,7 @@ export const CloseIcon = () => {
 
 const cards = [
   {
-    description: "SAP Concur",
+    description: "SAP",
     title: "Automation and Innovation Engineer",
     src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1gDhu93w4QCSPMGWxzJMv8QN3tqPQe4zfuMnOo_GPdixUFBcW4FCKE4PfXrV5l-epeBg&usqp=CAU",
     ctaText: "View",
