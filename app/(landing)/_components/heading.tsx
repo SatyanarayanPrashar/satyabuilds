@@ -1,49 +1,95 @@
 "use client";
 
-import { DisplayBox } from "@/components/displayBox"
-import { cn } from "@/lib/utils";
-import { Linkedin, Mail, MapPin, Twitter } from "lucide-react"
-import Image from "next/image"
-import { useMediaQuery } from "usehooks-ts";
 
-export const Heading = () => {
-    const isMobile = useMediaQuery("(max-width: 768px)");
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { Mail, Linkedin, Twitter, Code2, } from "lucide-react";
+import Image from "next/image";
+
+export const Hero = () => {
+    const words = ["AI Architectures", "Cognitive Systems", "EdTech Solutions"];
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIndex((prev) => (prev + 1) % words.length);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, []);
 
     return (
-        <div className="text-start w-full px-5 bg-white">
-            <DisplayBox classname={cn("flex flex-col sm:flex-row border rounded-xl p-4 gap-4 bg-[linear-gradient(45deg,transparent_25%,rgba(68,68,68,.2)_50%,transparent_75%,transparent_100%)] bg-zinc-100 relative overflow-hidden border-slate-200 bg-[length:250%_250%,100%_100%] bg-[position:-100%_0,0_0] bg-no-repeat w-full transition-[background-position_0s_ease] hover:bg-[position:200%_0,0_0] hover:duration-[1500ms]",
-                isMobile && "flex-col"
-            )}>
-                <Image src="/profile.png" alt="profile" width={160} height={160} className="hidden sm:block rounded-xl border border-gray-300 bg-cover mt-4"/>
-                <div className="mt-4 flex flex-col">
-                    <h1 className="text-3xl leading-snug">Satya</h1>
-                    <div className="flex gap-2 items-center text-[#4D4D4D] text-sm">
-                        Software Engineer
+        <section className="relative pt-20 pb-16">
+            <div className="flex flex-col md:flex-row gap-8 md:items-start">
+                <motion.div
+                    initial={{ scale: 0.9, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                    className="relative shrink-0"
+                >
+                    <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden border-2 border-zinc-700/50 relative z-10">
+                        <Image src="/profile.png" alt="Satya" width={160} height={160} className="object-cover" />
                     </div>
-                    <div className="flex gap-2 items-center text-[#4D4D4D] text-sm mt-2">
-                        <MapPin size={18}/>
-                        <p>Bangalore, India</p>
-                    </div>
-                    <div className="flex gap-2 items-center text-[#4D4D4D] text-sm mt-2">
-                        <Mail size={18}/>
-                        <p>satyanarayan.pr29@gmail.com</p>
-                    </div>
-                    <a className="flex gap-2 items-center text-[#4D4D4D] text-sm mt-2 hover:underline w-fit" href="https://www.linkedin.com/in/satyanarayan-prashar-57a170229/" target="_blank" rel="noopener noreferrer">
-                        <Linkedin size="20px"/> LinkedIn
-                    </a>
-                    <a className="flex gap-2 items-center text-[#4D4D4D] text-sm mt-2 hover:underline w-fit" href="https://x.com/Satya021Don" target="_blank" rel="noopener noreferrer">
-                        <Twitter size="20px"/> @Satya021Don
-                    </a>
+                    <div className="absolute -inset-4 bg-indigo-500/20 blur-2xl -z-10 rounded-full" />
+                </motion.div>
+
+                <div className="flex-1 space-y-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                    >
+                        <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+                            Satya
+                        </h1>
+                        <div className="h-6 mt-2 overflow-hidden relative">
+                            <motion.p
+                                key={index}
+                                initial={{ y: 20, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                exit={{ y: -20, opacity: 0 }}
+                                className="text-indigo-400 font-medium absolute top-0"
+                            >
+                                Building {words[index]}
+                            </motion.p>
+                        </div>
+                    </motion.div>
+
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.4 }}
+                        className="text-zinc-400 leading-relaxed max-w-2xl"
+                    >
+                        I engineer systems that live on the internet and occasionally, in the terminal.
+                        My work focuses on efficient <strong>RAG pipelines</strong> and <strong>agentic architectures</strong>.
+                        I sit at the intersection of <span className="text-zinc-200">Cosmos, Psychology, and Code</span>—exploring how biological patterns can optimize artificial intelligence to help us learn effectively.
+                    </motion.p>
+
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.5 }}
+                        className="flex flex-wrap gap-4 pt-2"
+                    >
+                        <SocialLink href="https://github.com/yourusername" icon={<Code2 size={18} />} label="GitHub" />
+                        <SocialLink href="https://x.com/Satya021Don" icon={<Twitter size={18} />} label="Twitter" />
+                        <SocialLink href="https://linkedin.com/in/satyanarayan-prashar-57a170229/" icon={<Linkedin size={18} />} label="LinkedIn" />
+                        <SocialLink href="mailto:satyanarayan.pr29@gmail.com" icon={<Mail size={18} />} label="Email" />
+                    </motion.div>
                 </div>
-            </DisplayBox>
-            
-            <DisplayBox>
-                <div className="flex flex-col gap-3 mt-4 text-[#4D4D4D] text-md">
-                    I build systems that live on the internet and occasionally, in the terminal.
-                    My work focuses on developing efficient RAG pipelines and designing agentic architectures that leverage context windows to their fullest potential.
-                    I’m particularly passionate about EdTech, with a strong interest in how the human brain identifies patterns to accelerate learning — and how technology can help us learn more effectively.
-                </div>
-            </DisplayBox>
-        </div>
-    )
-}
+            </div>
+        </section>
+    );
+};
+
+const SocialLink = ({ href, icon, label }: { href: string, icon: any, label: string }) => (
+    <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 text-zinc-500 hover:text-indigo-400 transition-colors text-sm"
+    >
+        {icon}
+        <span>{label}</span>
+    </a>
+);
