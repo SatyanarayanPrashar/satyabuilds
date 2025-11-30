@@ -85,8 +85,7 @@ export const ExperienceSection = () => {
                             className="w-full max-w-[600px] h-fit max-h-[90%] flex flex-col rounded-3xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-2xl relative"
                         >
                             {/* Header Image/Pattern */}
-                            <div className="h-32 bg-gradient-to-br from-indigo-900/40 to-zinc-900 relative w-full border-b border-zinc-800">
-                                {/* Close Button Desktop */}
+                            <div className="h-14 bg-gradient-to-br from-indigo-900/40 to-zinc-900 relative w-full border-b border-zinc-800">
                                 <button
                                     onClick={() => setActive(null)}
                                     className="hidden lg:flex absolute top-4 right-4 bg-black/50 hover:bg-black/70 p-1 rounded-full text-zinc-400 transition-colors"
@@ -102,7 +101,7 @@ export const ExperienceSection = () => {
                                     className="absolute -top-10 left-6 h-20 w-20 rounded-2xl border-4 border-zinc-900 bg-zinc-800 overflow-hidden shadow-lg flex items-center justify-center"
                                 >
                                     {active.src !== "NA" ? (
-                                        <img width={80} height={80} src={active.src} alt={active.title} className="object-cover h-full w-full" />
+                                        <img width={80} height={80} src={active.src} alt={active.title} className="object-fill p-1 h-full w-full" />
                                     ) : (
                                         <div className="text-xl font-bold text-indigo-400">{active.description.substring(0, 2)}</div>
                                     )}
@@ -153,9 +152,9 @@ export const ExperienceSection = () => {
                         <div className="flex gap-4 items-center">
                             <motion.div layoutId={`img-${card.title}-${id}`} className="h-12 w-12 rounded-lg bg-zinc-800 border border-zinc-700 overflow-hidden flex items-center justify-center shrink-0">
                                 {card.src !== "NA" ? (
-                                    <img width={48} height={48} src={card.src} alt={card.title} className="object-cover h-full w-full" />
+                                    <img width={48} height={48} src={card.src} alt={card.title} className="object-fill p-1 h-full w-full" />
                                 ) : (
-                                    <div className="text-sm font-bold text-indigo-400">{card.description.substring(0, 2)}</div>
+                                    <div className="text-sm font-bold text-indigo-400 p-1">{card.description.substring(0, 6)}</div>
                                 )}
                             </motion.div>
 
@@ -182,8 +181,8 @@ const cards = [
     {
       description: "SAP",
       title: "Automation Engineer",
-      src: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg", // Replaced with valid Logo URL
-      ctaText: "View Log",
+      src: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg",
+      ctaText: "View",
       period: "Jan 2025 - Current",
       details: [
         "Developed automation software to streamline repetitive workflows, enhancing operational efficiency for over 1,000 support engineers.",
@@ -195,7 +194,7 @@ const cards = [
       description: "Monter Pvt Ltd",
       title: "Frontend Developer",
       src: "NA",
-      ctaText: "View Log",
+      ctaText: "View",
       period: "May 2024 - July 2024",
       details: [
         "Built the client facing website using NextJS, enabling investors and companies to share a common platform.",
@@ -207,7 +206,7 @@ const cards = [
       description: "TreeVed",
       title: "Product Management Intern",
       src: "https://www.treeved.com/footerLogo.png",
-      ctaText: "View Log",
+      ctaText: "View",
       period: "Jan 23 - Nov 23",
       details: [
         "Managed a team of 9 to build a website enabling people to discover and store valuable links.",

@@ -28,7 +28,6 @@ const BlogsPage = () => {
 
   return (
     <main className="min-h-screen text-zinc-300 selection:bg-indigo-500/30 relative">
-      <CosmicBackground />
 
       <article className="max-w-3xl mx-auto px-6 pt-12 pb-20">
         

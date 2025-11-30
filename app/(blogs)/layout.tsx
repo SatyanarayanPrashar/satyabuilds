@@ -1,5 +1,7 @@
 // import { CustomScrollbar } from "@/components/CustomScrollbar";
 
+import { CosmicBackground } from "@/components/CosmicBG";
+
 const BlogspageLayout = ({
   children
 }: {
@@ -7,7 +9,7 @@ const BlogspageLayout = ({
 }) => {
   return ( 
     <div className="h-">
-      {/* <CustomScrollbar /> */}
+      <CosmicBackground nebulous={false}/>
       <main className="h-full pt-[3rem]">
         {children}
       </main>

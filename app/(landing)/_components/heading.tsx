@@ -20,7 +20,7 @@ export const Hero = () => {
     return (
         <section className="relative pt-20 pb-16">
             <div className="flex flex-col md:flex-row gap-8 md:items-start">
-                <motion.div
+                {/* <motion.div
                     initial={{ scale: 0.9, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.5 }}
@@ -30,7 +30,7 @@ export const Hero = () => {
                         <Image src="/profile.png" alt="Satya" width={160} height={160} className="object-cover" />
                     </div>
                     <div className="absolute -inset-4 bg-indigo-500/20 blur-2xl -z-10 rounded-full" />
-                </motion.div>
+                </motion.div> */}
 
                 <div className="flex-1 space-y-4">
                     <motion.div
@@ -62,7 +62,7 @@ export const Hero = () => {
                     >
                         I engineer systems that live on the internet and occasionally, in the terminal.
                         My work focuses on efficient <strong>RAG pipelines</strong> and <strong>agentic architectures</strong>.
-                        I sit at the intersection of <span className="text-zinc-200">Cosmos, Psychology, and Code</span>—exploring how biological patterns can optimize artificial intelligence to help us learn effectively.
+                        I sit at the intersection of <span className="text-zinc-200">Cosmos, Psychology, and Code</span>—exploring how artificial intelligence can help too recognise our biological patterns to help us learn effectively.
                     </motion.p>
 
                     <motion.div
