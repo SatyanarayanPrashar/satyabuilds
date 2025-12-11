@@ -20,28 +20,20 @@ export const Hero = () => {
     return (
         <section className="relative pt-20 pb-16">
             <div className="flex flex-col md:flex-row gap-8 md:items-start">
-                {/* <motion.div
-                    initial={{ scale: 0.9, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                    className="relative shrink-0"
-                >
-                    <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden border-2 border-zinc-700/50 relative z-10">
-                        <Image src="/profile.png" alt="Satya" width={160} height={160} className="object-cover" />
-                    </div>
-                    <div className="absolute -inset-4 bg-indigo-500/20 blur-2xl -z-10 rounded-full" />
-                </motion.div> */}
-
                 <div className="flex-1 space-y-4">
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
                     >
-                        <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
-                            Satya
-                        </h1>
-                        <div className="h-6 mt-2 overflow-hidden relative">
+                        <p className="text-zinc-400 leading-relaxed text-xl font-semibold">
+                            Hi, I'm {" "}
+                            <span className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+                                Satya!
+                            </span>
+
+                        </p>
+                        {/* <div className="h-6 mt-2 overflow-hidden relative">
                             <motion.p
                                 key={index}
                                 initial={{ y: 20, opacity: 0 }}
@@ -51,7 +43,7 @@ export const Hero = () => {
                             >
                                 Building {words[index]}
                             </motion.p>
-                        </div>
+                        </div> */}
                     </motion.div>
 
                     <motion.p
@@ -60,9 +52,7 @@ export const Hero = () => {
                         transition={{ delay: 0.4 }}
                         className="text-zinc-400 leading-relaxed max-w-2xl"
                     >
-                        I engineer systems that live on the internet and occasionally, in the terminal.
-                        My work focuses on efficient <strong>RAG pipelines</strong> and <strong>agentic architectures</strong>.
-                        I sit at the intersection of <span className="text-zinc-200">Cosmos, Psychology, and Code</span>—exploring how artificial intelligence can help too recognise our biological patterns to help us learn effectively.
+                        A software engineer by choice and a painter at heart. Currently deep into Agentic Systems and RAG pipelines. Tech, Cosmos, Philosophy, and Psychology fascinate me.
                     </motion.p>
 
                     <motion.div
@@ -71,12 +61,23 @@ export const Hero = () => {
                         transition={{ delay: 0.5 }}
                         className="flex flex-wrap gap-4 pt-2"
                     >
-                        <SocialLink href="https://github.com/yourusername" icon={<Code2 size={18} />} label="GitHub" />
-                        <SocialLink href="https://x.com/Satya021Don" icon={<Twitter size={18} />} label="Twitter" />
                         <SocialLink href="https://linkedin.com/in/satyanarayan-prashar-57a170229/" icon={<Linkedin size={18} />} label="LinkedIn" />
+                        <SocialLink href="https://github.com/SatyanarayanPrashar/" icon={<Code2 size={18} />} label="GitHub" />
+                        <SocialLink href="https://x.com/Satya021Don" icon={<Twitter size={18} />} label="Twitter" />
                         <SocialLink href="mailto:satyanarayan.pr29@gmail.com" icon={<Mail size={18} />} label="Email" />
                     </motion.div>
                 </div>
+                <motion.div
+                        initial={{ scale: 0.9, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.5 }}
+                        className="relative shrink-0"
+                    >
+                        <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden border-2 border-zinc-700/50 relative z-10">
+                            <Image src="/profile2.png" alt="Satya" fill className="object-cover" />
+                        </div>
+                        <div className="absolute -inset-4 bg-indigo-500/20 blur-2xl -z-10 rounded-full" />
+                    </motion.div>
             </div>
         </section>
     );

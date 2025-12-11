@@ -10,9 +10,15 @@ export const ProjectsSection = () => {
             <SectionHeading icon={Cpu} title="Featured Projects" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <ProjectCard
+                    title="Customer Support Agent"
+                    desc="A multi-agent system using LangGraph, employing a Supervisor-Worker pattern for Customer Support."
+                    tags={["LangGraph", "RAG", "MongoDB", "FastAPI"]}
+                    link="https://github.com/SatyanarayanPrashar/customer-support-agent/"
+                />
+                <ProjectCard
                     title="Docarite"
                     desc="AI-powered GitHub PR reviewer using LangGraph. Automates code review to catch critical bugs early."
-                    tags={["LangGraph", "Langfuse", "Django", "AWS"]}
+                    tags={["LangGraph", "Django", "AWS", "Next.js"]}
                     link="https://docarite.com/"
                 />
                 <ProjectCard

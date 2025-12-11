@@ -49,7 +49,7 @@ export const ExperienceSection = () => {
 
     return (
         <section className="py-12">
-            <SectionHeading icon={Briefcase} title="Career Logs" />
+            <SectionHeading icon={Briefcase} title="What I do?" />
 
             {/* Overlay */}
             <AnimatePresence>
@@ -192,7 +192,7 @@ const cards = [
     },
     {
       description: "Monter Pvt Ltd",
-      title: "Frontend Developer",
+      title: "Software Development Intern",
       src: "NA",
       ctaText: "View",
       period: "May 2024 - July 2024",
@@ -204,15 +204,15 @@ const cards = [
     },
     {
       description: "TreeVed",
-      title: "Product Management Intern",
+      title: "Software Development Intern",
       src: "https://www.treeved.com/footerLogo.png",
       ctaText: "View",
       period: "Jan 23 - Nov 23",
       details: [
-        "Managed a team of 9 to build a website enabling people to discover and store valuable links.",
-        "Delegated tasks to the development team working with NextJS, Django, AWS, and Flutter.",
-        "Prepared strategy and road-map for the product based on market research and available resources.",
-        "Documented and streamlined decision-making process, ensuring alignment and transparency."
+        "Built a platform enabling people to discover, share and store valuable links, based on their internet browsing experience",
+        "Designed secured API routes considering scalability to support millions of requests using Redis cache and queues",
+        "Deployed and maintained scalable, fault-tolerant and low cost AWS infrastructure using Docker and Ngnix",
+        "Conducted frequent code reviews to ensure code quality and consistency, while maintaining comprehensive documentation for development processes"
       ]
     }
   ];
