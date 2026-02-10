@@ -18,6 +18,11 @@ export const BlogSection = () => {
                     desc="Techniques for compaction and structured notes to maintain coherence."
                     slug="/blogs/technical/Context-window-to-full-extent"
                 />
+                <BlogRow 
+                    title="Understanding gRPC"
+                    desc="Moving beyond REST APIs for efficient inter-service communication."
+                    slug="/blogs/technical/understanding-grpc"
+                />
             </div>
         </section>
     )

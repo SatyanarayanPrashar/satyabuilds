@@ -1,15 +1,15 @@
 export const QuoteBox = ({ children, author }: { children: React.ReactNode, author?: string }) => (
-    <div className="my-8 relative overflow-hidden rounded-r-xl border-l-4 border-indigo-500 bg-zinc-900/50 p-6 shadow-sm">
-        <div className="relative z-10 text-lg italic text-zinc-300 font-medium leading-relaxed">
+    <div className="my-8 relative overflow-hidden rounded-r-xl border-l-4 border-indigo-500 bg-zinc-100 dark:bg-zinc-900/50 p-6 shadow-sm transition-colors duration-300">
+        <div className="relative z-10 text-lg italic text-zinc-700 dark:text-zinc-300 font-medium leading-relaxed">
             "{children}"
         </div>
-        {author && <div className="mt-3 text-sm font-bold text-indigo-400">- {author}</div>}
+        {author && <div className="mt-3 text-sm font-bold text-indigo-600 dark:text-indigo-400">- {author}</div>}
         <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-transparent pointer-events-none" />
     </div>
 );
 
 export const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-    <h2 className="text-2xl font-bold text-zinc-100 mt-12 mb-4 tracking-tight">
+    <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mt-3 tracking-tight">
         {children}
     </h2>
 );

@@ -1,25 +1,46 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Moon, Sun } from "lucide-react"; // Added Icons
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "next-themes"; // Added Hook
 import { Footer } from "@/app/(landing)/_components/footer";
 import { ExternalLink, QuoteBox, SectionTitle } from "@/app/(blogs)/_components/extras";
 
 const ContextWindow_Blog = () => {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
-    <main className="min-h-screen text-zinc-300 selection:bg-indigo-500/30 relative">
+    // UPDATED: Main container colors for light/dark mode
+    <main className="min-h-screen bg-zinc-50 dark:bg-black text-zinc-800 dark:text-zinc-300 selection:bg-indigo-500/30 relative transition-colors duration-300">
 
       <article className="max-w-3xl mx-auto px-6 pt-12 pb-20">
         
-        {/* Navigation */}
-        <Link href="/" className="group flex items-center gap-2 text-zinc-500 hover:text-indigo-400 transition-colors mb-8 w-fit">
-            <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-            <span className="text-sm font-medium">Back to Orbit</span>
-        </Link>
+        {/* Navigation Header with Toggle */}
+        <div className="flex items-center justify-between mb-8">
+            <Link href="/" className="group flex items-center gap-2 text-zinc-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors w-fit">
+                <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+                <span className="text-sm font-medium">Back to Orbit</span>
+            </Link>
+
+            {/* Theme Toggle Button */}
+            {mounted && (
+                <button
+                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                    className="p-2 rounded-full bg-zinc-200 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition-all"
+                    aria-label="Toggle Dark Mode"
+                >
+                    {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+                </button>
+            )}
+        </div>
 
         {/* Content Body */}
         <motion.div 
@@ -28,7 +49,8 @@ const ContextWindow_Blog = () => {
             transition={{ duration: 0.5 }}
             className="flex flex-col text-lg leading-relaxed gap-4"
         >
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+            {/* UPDATED: Heading color */}
+            <h1 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
                 Context Window to full extent
             </h1>
             
@@ -51,7 +73,8 @@ const ContextWindow_Blog = () => {
                 <p className="flex-1">
                     Even when all the necessary information still lies within the window, the model can degrade, producing inconsistent or even hallucinated responses, this is because models have "attention budget" which they process at once when parsing large amount of data. Every new token introduced depletes this budget by some amount, increasing the need to carefully curate the tokens available to the LLM.
                 </p>
-                <div className="relative h-[290px] md:w-[300px] shrink-0 rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900/50">
+                {/* UPDATED: Container styling */}
+                <div className="relative h-[290px] md:w-[300px] shrink-0 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900/50">
                     <Image src="/blogs/llm_rot.png" alt="LLM Attention Rot Diagram" fill className="object-fill" />
                 </div>
             </div>
@@ -108,7 +131,8 @@ const ContextWindow_Blog = () => {
             </p>
             
             <div className="flex flex-col md:flex-row gap-8 my-4 items-start">
-                 <div className="relative h-[350px] w-full md:w-[300px] shrink-0 rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900/50">
+                 {/* UPDATED: Container styling */}
+                 <div className="relative h-[350px] w-full md:w-[300px] shrink-0 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900/50">
                     <Image src="/blogs/context_overload.png" alt="Context Overload Diagram" fill className="object-fill" />
                 </div>
                 <p className="flex-1">
@@ -144,7 +168,8 @@ const ContextWindow_Blog = () => {
                 Imagine an customer support agent that handles everything from returns and warranties to billing inquiries. If a single agent tried to juggle all of that, its context would quickly become bloated with conflicting instructions — details about refund policies, warranty timelines, and invoice generation competing for attention. The model&apos;s focus would blur, and even simple queries might produce inconsistent or incorrect responses.
             </p>
             
-            <div className="relative h-[700px] w-full my-6 rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900/50">
+            {/* UPDATED: Container styling */}
+            <div className="relative h-[700px] w-full my-6 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900/50">
                 <Image src="/blogs/subagetnt.png" alt="Sub-agent Architecture Diagram" fill className="object-fill" />
             </div>
 

@@ -1,24 +1,45 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, } from "lucide-react";
+import { ArrowLeft, Moon, Sun } from "lucide-react"; // Added Moon/Sun
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes"; // Added hook
 import { Footer } from "@/app/(landing)/_components/footer";
 import { SectionTitle } from "@/app/(blogs)/_components/extras"; 
 
 const Blog = () => {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
-    <main className="min-h-screen text-zinc-300 selection:bg-indigo-500/30 relative">
+    <main className="min-h-screen bg-zinc-50 dark:bg-black text-zinc-800 dark:text-zinc-300 selection:bg-indigo-500/30 relative transition-colors duration-300">
 
-      <article className="max-w-3xl mx-auto px-6 pt-12 pb-20">
+      <article className="max-w-3xl mx-auto px-6 pt-12 pb-20 relative">
         
-        {/* Navigation */}
-        <Link href="/" className="group flex items-center gap-2 text-zinc-500 hover:text-indigo-400 transition-colors mb-8 w-fit">
-            <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-            <span className="text-sm font-medium">Back to Orbit</span>
-        </Link>
+        {/* Navigation Header with Toggle */}
+        <div className="flex items-center justify-between mb-8">
+            <Link href="/" className="group flex items-center gap-2 text-zinc-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors w-fit">
+                <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+                <span className="text-sm font-medium">Back to Orbit</span>
+            </Link>
+
+            {/* Theme Toggle Button */}
+            {mounted && (
+                <button
+                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                    className="p-2 rounded-full bg-zinc-200 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition-all"
+                    aria-label="Toggle Dark Mode"
+                >
+                    {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+                </button>
+            )}
+        </div>
 
         <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -26,8 +47,7 @@ const Blog = () => {
             transition={{ duration: 0.5 }}
             className="flex flex-col text-lg leading-relaxed gap-6"
         >
-            {/* Hero Image */}
-            <div className="relative h-[20rem] w-full overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/50 shadow-2xl">
+            <div className="relative h-[20rem] w-full overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900/50 shadow-2xl">
                 <Image 
                     src="/blogs/multi_agent.png" 
                     alt="Multi Agent System Header" 
@@ -36,7 +56,8 @@ const Blog = () => {
                 />
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-white mt-4 tracking-tight">
+            {/* UPDATED: Headings are now dark in light mode */}
+            <h1 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mt-4 tracking-tight">
                 Building reliable multi agent AI systems
             </h1>
 
@@ -56,7 +77,8 @@ const Blog = () => {
                         A multi-agent architecture distributes the work across agents, each with its own context window. This adds more capacity to work in parallel and gives more token space to think.
                     </p>
                 </div>
-                <div className="relative h-[32rem] w-full md:w-[320px] shrink-0 rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900/50">
+                {/* UPDATED: Container styling */}
+                <div className="relative h-[32rem] w-full md:w-[320px] shrink-0 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900/50">
                     <Image 
                         src="/blogs/multi_agent_header.png" 
                         alt="Agent Architecture Diagram" 
@@ -76,14 +98,15 @@ const Blog = () => {
             {/* Section: Context is Everything */}
             <SectionTitle>Context is everything</SectionTitle>
             
-            <div className="flex flex-col items-center gap-8 my-4">
+            <div className="flex flex-col items-center gap-8">
                 <p>
                     While multiple agents increase capacity, they also make coordination much harder.
                     Each agent only knows what&apos;s inside its own context window.
                     If two subagents need similar background information but receive slightly different details, they may make different assumptions.
                     When their outputs are merged, the final result might not align — like assembling a body where each part was built with a different design in mind.
                 </p>
-                <div className="relative h-[30rem] w-full md:w-[22rem] rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900/50">
+                {/* UPDATED: Container styling */}
+                <div className="relative h-[30rem] w-full md:w-[22rem] rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900/50">
                     <Image 
                         src="/blogs/kevin11.png" 
                         alt="Kevin 11 Mismatch Example" 
@@ -105,8 +128,8 @@ const Blog = () => {
 
             {/* Section: Linear Agent */}
             <SectionTitle>Single-threaded linear agent</SectionTitle>
-            <div className="flex flex-col items-center gap-8 my-4">
-              <div className="relative h-[30rem] w-full md:w-[22rem] rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900/50">
+            <div className="flex flex-col items-center gap-8">
+              <div className="relative h-[30rem] w-full md:w-[22rem] rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900/50">
                     <Image 
                         src="/blogs/linear_agent.png" 
                         alt="Linear Agent Flow" 
@@ -133,11 +156,11 @@ const Blog = () => {
 
             {/* Section: Supervisor */}
             <SectionTitle>Supervisor (Router) multi-agent systems</SectionTitle>
-            <div className="flex flex-col items-center gap-8 my-4">
+            <div className="flex flex-col items-center gap-8">
                 <p>
                     The lead agent not ony breaks the objective into subtasks but also acts like a supervisor, routing each subtask to the most appropriate specia subagent. This architecture is widely used in customer facing chatbot like agentic systems.
                 </p>
-                <div className="relative h-[21rem] w-full md:w-[36.8rem] rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900/50">
+                <div className="relative h-[21rem] w-full md:w-[36.8rem] rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900/50">
                     <Image 
                         src="/blogs/subagetnt.png" 
                         alt="Supervisor Agent Architecture" 
@@ -146,7 +169,7 @@ const Blog = () => {
                     />
                 </div>
                 <p>
-                    Another variation of this is where the objective is not broken down into subtasks to be assigned to different agents, but they fails in multi-topic querries. For example, "Hey, I want to check warrenty of my device and also would like to return it.", here if the objective is not broken into "check warrenty" and "return policies" it will be divereted to just a single agent which will leave user with only one answer. While teams at Parlant are researching single-agent routing, I argue that subtasks remain superior because they enforce deterministic boundaries—preventing the 'hallucination drift' common in generalist agents.
+                    Another variation of this is where the objective is not broken down into subtasks to be assigned to different agents, but they fails in multi-topic querries. For example, &quot;Hey, I want to check warrenty of my device and also would like to return it.&quot;, here if the objective is not broken into &quot;check warrenty&quot; and &quot;return policies&quot; it will be divereted to just a single agent which will leave user with only one answer. While teams at Parlant are researching single-agent routing, I argue that subtasks remain superior because they enforce deterministic boundaries—preventing the &apos;hallucination drift&apos; common in generalist agents.
                 </p>
             </div>
 
@@ -156,7 +179,7 @@ const Blog = () => {
             <p>
                 LLMs are unpredictable at times, and that makes multi-agent systems error-prone. Restarting the whole process after an error is not an option. It&apos;s expensive and users hate it. A good system should be able to resume from where it got stuck.
                 To achieve this, store the agent&apos;s context in external memory until the job is finished. This allows the agent to recover and continue without losing progress.
-                It's important for the agent to recover by its own from errors. LLM models can be excellent prompt engineers, they can analyse why the failure occured and possible fix for it, suggesting the agent to recover by prompting it.
+                It&apos;s important for the agent to recover by its own from errors. LLM models can be excellent prompt engineers, they can analyse why the failure occured and possible fix for it, suggesting the agent to recover by prompting it.
             </p>
 
             {/* Conclusion */}

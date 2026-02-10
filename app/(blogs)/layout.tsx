@@ -10,7 +10,7 @@ const BlogspageLayout = ({
   return ( 
     <div className="h-">
       <CosmicBackground nebulous={false}/>
-      <main className="h-full pt-[3rem]">
+      <main className="h-full ">
         {children}
       </main>
     </div>

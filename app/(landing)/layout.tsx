@@ -5,7 +5,7 @@ const MarketingLayout = ({
 }) => {
   return ( 
     <div className="h-full scrollbar-hide [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-      <main className="h-full pt-[3rem]">
+      <main className="h-full ">
           {children}
       </main>
     </div>

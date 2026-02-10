@@ -8,7 +8,7 @@ const AboutpageLayout = ({
   return ( 
     <div className="h-full">
       {/* <Navbar /> */}
-      <main className="h-full pt-[3rem]">
+      <main className="h-full">
         {children}
       </main>
     </div>
